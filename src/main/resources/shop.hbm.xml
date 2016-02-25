@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <hibernate-mapping>
+            <class name="entities.Shop" table="shop">
+                <id name="id" column="id" type="java.lang.Integer">
+                    <generator class="increment">
+                    </generator>
+                </id>
+                <property name="shopName" column="shop_name" type="java.lang.String"/>
+                <many-to-one name="categories" column="categories_id" class="entities.Categories" lazy="false"/>
+                <many-to-one name="products" column="products_id" class="entities.Product" lazy="false"/>
+            </class>
+
+</hibernate-mapping>
